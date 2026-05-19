@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
-using Cinemachine;
+using Unity.Cinemachine;
 
 namespace StarterAssets
 {
