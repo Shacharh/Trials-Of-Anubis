@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   skipIterations:
-    m_OverrideState: 1
-    m_Value: 0
+    m_OverrideState: 0
+    m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.25
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.43
   scatter:
-    m_OverrideState: 1
-    m_Value: 0.5
+    m_OverrideState: 0
+    m_Value: 0.7
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -32,8 +32,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   downscale:
     m_OverrideState: 0
     m_Value: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
---- !u!114 &-3357603926938260329
+--- !u!114 &-7011558710299706105
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,13 +68,35 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.25
   smoothness:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 0.4
   rounded:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-3904796521178644550
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  lift:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 0.9482534, z: 0.9739069, w: 0.03134796}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.7560395, z: 0.97752935, w: 0.36849627}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.97282827, z: 0.72302204, w: -0.3224203}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,8 +112,10 @@ MonoBehaviour:
   components:
   - {fileID: 849379129802519247}
   - {fileID: -7893295128165547882}
-  - {fileID: 7391319092446245454}
-  - {fileID: -3357603926938260329}
+  - {fileID: -7011558710299706105}
+  - {fileID: 5320101314867464550}
+  - {fileID: -3904796521178644550}
+  - {fileID: 6139371288904426440}
 --- !u!114 &849379129802519247
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -118,21 +142,21 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   detectPaperWhite:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   paperWhite:
-    m_OverrideState: 1
-    m_Value: 234
+    m_OverrideState: 0
+    m_Value: 300
   detectBrightnessLimits:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   minNits:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.005
   maxNits:
-    m_OverrideState: 1
-    m_Value: 647
---- !u!114 &7391319092446245454
+    m_OverrideState: 0
+    m_Value: 1000
+--- !u!114 &5320101314867464550
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,19 +165,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
-  m_Name: MotionBlur
+  m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
+  m_Name: ChannelMixer
   m_EditorClassIdentifier: 
-  active: 0
-  mode:
+  active: 1
+  redOutRedIn:
+    m_OverrideState: 1
+    m_Value: 24
+  redOutGreenIn:
+    m_OverrideState: 1
+    m_Value: -3
+  redOutBlueIn:
+    m_OverrideState: 1
+    m_Value: 1
+  greenOutRedIn:
+    m_OverrideState: 1
+    m_Value: -10
+  greenOutGreenIn:
+    m_OverrideState: 1
+    m_Value: 101
+  greenOutBlueIn:
+    m_OverrideState: 1
+    m_Value: -10
+  blueOutRedIn:
+    m_OverrideState: 1
+    m_Value: 3
+  blueOutGreenIn:
+    m_OverrideState: 1
+    m_Value: -16
+  blueOutBlueIn:
+    m_OverrideState: 1
+    m_Value: 67
+--- !u!114 &6139371288904426440
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 1
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.64730895, z: 0.89039034, w: 0.21112573}
+  midtones:
+    m_OverrideState: 1
+    m_Value: {x: 0.7640732, y: 1, z: 0.9331792, w: 0.21175642}
+  highlights:
+    m_OverrideState: 0
+    m_Value: {x: 0.76330584, y: 1, z: 0.5879653, w: 1}
+  shadowsStart:
     m_OverrideState: 0
     m_Value: 0
-  quality:
-    m_OverrideState: 1
-    m_Value: 2
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.6
-  clamp:
+  shadowsEnd:
     m_OverrideState: 0
-    m_Value: 0.05
+    m_Value: 0.3
+  highlightsStart:
+    m_OverrideState: 0
+    m_Value: 0.55
+  highlightsEnd:
+    m_OverrideState: 0
+    m_Value: 1
